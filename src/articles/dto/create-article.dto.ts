@@ -1,11 +1,20 @@
-import { IsNotEmpty } from 'class-validator';
+import { IsString, IsNotEmpty } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateArticleDto {
-  @IsNotEmpty() title: string;
+  @IsNotEmpty()
+  @IsString()
+  title: string;
 
-  @IsNotEmpty() content: string;
+  @IsNotEmpty()
+  @IsString()
+  content: string;
 
-  @IsNotEmpty() author: string;
+  @IsNotEmpty()
+  @IsString()
+  author: string;
 
-  @IsNotEmpty() attachment: string;
+  @IsNotEmpty()
+  @IsString()
+  attachment: string;
 }
