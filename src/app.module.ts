@@ -8,6 +8,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { configuration } from 'config/configuration';
+import { VocabulariesModule } from './vocabularies/vocabularies.module';
 
 @Module({
   imports: [
@@ -27,7 +28,8 @@ import { configuration } from 'config/configuration';
     ArticlesModule,
     ThinkModule,
     UsersModule,
-    AuthModule
+    AuthModule,
+    VocabulariesModule
   ],
   controllers: [AppController],
   providers: [AppService],

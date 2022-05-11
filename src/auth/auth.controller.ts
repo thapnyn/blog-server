@@ -11,7 +11,7 @@ export class AuthController {
   @UseGuards(AuthGuard('local'))
   @Post('/login')
   login(@Request() req): any {
-    return this.authService.login(req.user);
+    return this.authService.loginWithCredentials(req.user);
   }
 
   @Post('/register')
@@ -21,7 +21,7 @@ export class AuthController {
 
   @UseGuards(JwtAuthGuard)
   @Get('/protected')
-  getHelloProtected(@Request() req): string {
+  getHelloProtected(@Request() req): any {
     return req.user;
   }
 }
