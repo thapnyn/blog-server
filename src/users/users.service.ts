@@ -31,7 +31,7 @@ export class UsersService {
       throw new HttpException({
         statusCode: HttpStatus.BAD_REQUEST,
         errorCode: error.code,
-        message: error.code === 11000 ? 'Username already exists' : error.message,
+        message: error.code === 11000 ? `${createUserDto.username} already exists` : error.message,
       }, HttpStatus.BAD_REQUEST);
     }
 
