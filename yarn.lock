@@ -3995,6 +3995,11 @@
   optionalDependencies:
     "saslprep" "^1.0.3"
 
+"mongoose-paginate-v2@^1.6.3":
+  "integrity" "sha512-wxIOcZL7V3+yHIkdTcDk+MtPxjDacEmrZ/4NpwgvOmmEm9SWWsBKRyPd/EmHlRUzk3ylr7fy4QEje1VMg0qpZA=="
+  "resolved" "https://registry.npmjs.org/mongoose-paginate-v2/-/mongoose-paginate-v2-1.6.3.tgz"
+  "version" "1.6.3"
+
 "mongoose@^6.0.2", "mongoose@^6.2.3":
   "integrity" "sha512-FxF2D0MGGIw9bAJ57nSyM4Hs4tDHbu6dn9gQwT1J/lxmRB8jfaWWJ3FSJXTmeYlQ6BpyKeIaT8fj6SAX0YMNBA=="
   "resolved" "https://registry.npmjs.org/mongoose/-/mongoose-6.2.3.tgz"

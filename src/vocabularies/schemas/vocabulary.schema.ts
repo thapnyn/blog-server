@@ -1,5 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Types } from 'mongoose';
+import { Document } from 'mongoose';
+import paginate from 'mongoose-paginate-v2';
+import { listBoxId } from '../dto/create-vocabulary.dto';
 
 export type VocabularyDocument = Vocabulary & Document;
 
@@ -11,22 +13,22 @@ export class Vocabulary {
 
   @Prop({
     required: true,
-    unique: true,
   })
   nameCode: string;
 
   @Prop({
-    required: true,
+    isInteger: true,
+    default: listBoxId[0],
   })
-  idBox: string;
+  idBox: number;
 
   @Prop({
     required: true,
-    
   })
   idUser: string;
 
   idCate: string;
 }
 
-export const VocabularySchema = SchemaFactory.createForClass(Vocabulary);
+export const VocabularySchema = SchemaFactory.createForClass(Vocabulary)
+VocabularySchema.plugin(paginate);

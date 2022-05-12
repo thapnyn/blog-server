@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { configuration } from 'config/configuration';
 import { VocabulariesModule } from './vocabularies/vocabularies.module';
+import { VocabularyCategoriesModule } from './vocabulary-categories/vocabulary-categories.module';
 
 @Module({
   imports: [
@@ -24,12 +25,12 @@ import { VocabulariesModule } from './vocabularies/vocabularies.module';
       }),
       inject: [ConfigService],
     }),
-    // MongooseModule.forRoot(process.env.MONGO_URI),
     ArticlesModule,
     ThinkModule,
     UsersModule,
     AuthModule,
-    VocabulariesModule
+    VocabulariesModule,
+    VocabularyCategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
