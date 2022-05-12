@@ -10,6 +10,6 @@ export class VocabulariesController {
   @UseGuards(JwtAuthGuard)
   @Post('/new')
   async create(@Body() createVocabulary: CreateVocabularyDto, @Request() req): Promise<CreateVocabularyDto> {
-    return this.vocabulariesService.create(createVocabulary);
+    return this.vocabulariesService.create(req.user, createVocabulary);
   }
 }
